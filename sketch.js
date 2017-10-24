@@ -8,7 +8,7 @@ function setup() {
 }
 
 function draw() {
-background(30); 
+background(255, 236, 198); 
  
  translate(width/2,height/2);
  
@@ -28,8 +28,6 @@ background(30);
   clock(second(),60,10,90,[224, 184, 210])
   
   
-
-
 push()
 var diameter = 0;
   
@@ -42,39 +40,64 @@ var diameter = 0;
   
  textSize(30);
  
+//posizione
+var p1 = -50 
+var p2 = -20
+
+fill(81, 5, 55);
 //ora Berlino
 var h = hour();
-text("\n" + h, -130, -20);
+text("\n" + h, p1+30, p2);
 
  textSize(16);
 var m = minute();
-text("\n" + m, -130, +30);
+text("\n" + m, p1+37, p2+50);
 
 var s = second();
-text("\n" + s, -130, 60);
+text("\n" + s, p1+37, p2+80);
 
-//ora El Cairo
 var h2 = hour()+1;
 if (hour()+1==25) {
 text ("0");
 }
- textSize(30);
-text("\n" + h2, 50, -20);
+
+fill(255);
+//ora El Cairo
+ textSize(25);
+text("\n" + h2, p1+270, p2);
 
  textSize(16);
 var m2 = minute();
-text("\n" + m2, +50, +30);
+text("\n" + m2, p1+275, p2+50);
 
 var s2 = second();
-text("\n" + s2, +50, 60);
+text("\n" + s2, p1+275, p2+80);
 
+//ora Greenwich
+textSize(25);
+text("\n" + h2, p1-190, p2);
 
+ textSize(16);
+var m2 = minute();
+text("\n" + m2, p1-190, p2+50);
+
+var s2 = second();
+text("\n" + s2, p1-190, p2+80);
+
+  fill(81, 5, 55);
+  textSize(25);
+  text('Berlin',p1+10, -40);
+  textSize(16);
+  text('UTC+1',p1+20, -20);
   fill(255);
-  textSize(30);
-  text('Berlin',-130, -60);
-  text('UTC+1',-130, -30);
-  text('El Cairo',+50, -60);
-  text('UTC+2',+50, -30);
+  textSize(25);
+  text('El Cairo',p1+210, -40);
+  textSize(16);
+  text('UTC+2',p1+245, -20);
+  textSize(25);
+  text('Greenwich',p1-190, -40);
+  textSize(16);
+  text('UTC+0',p1-190, -20);
   
 pop();  
 }
@@ -95,8 +118,7 @@ function clock(timeValue,range,size,radius,col){
   fill(col)
   stroke(0);
   noStroke();
-  //ellipse(radius,0,size,size)
-  fill(30,40,100,20)
+  fill(30,40,100,0)
   ellipse(0,0,radius*2-10,radius*2-10)
   pop()
   
