@@ -62,8 +62,8 @@ text ("0");
 }
 
 var h3 = hour()-1;
-if (hour()+1==25) {
-text ("0");
+if (hour()-1==-1) {
+text ("23");
 }
 
 fill(255);
