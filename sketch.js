@@ -61,6 +61,11 @@ if (hour()+1==25) {
 text ("0");
 }
 
+var h3 = hour()-1;
+if (hour()+1==25) {
+text ("0");
+}
+
 fill(255);
 //ora El Cairo
  textSize(25);
@@ -75,14 +80,14 @@ text("\n" + s2, p1+275, p2+80);
 
 //ora Greenwich
 textSize(25);
-text("\n" + h2, p1-190, p2);
+text("\n" + h3, p1-190, p2);
 
  textSize(16);
-var m2 = minute();
-text("\n" + m2, p1-190, p2+50);
+var m3 = minute();
+text("\n" + m3, p1-190, p2+50);
 
-var s2 = second();
-text("\n" + s2, p1-190, p2+80);
+var s3 = second();
+text("\n" + s3, p1-190, p2+80);
 
   fill(81, 5, 55);
   textSize(25);
